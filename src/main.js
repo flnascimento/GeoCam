@@ -149,7 +149,7 @@ let empresaNome = "EMPRESA";
 
 async function fetchEmpresa() {
   try {
-    const res = await fetch('/Nome.json');
+    const res = await fetch(`${import.meta.env.BASE_URL}Nome.json`);
     if (res.ok) {
       const data = await res.json();
       empresaNome = data.nome;
