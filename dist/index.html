@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GeoCam Engenharia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-BbMb4Bc_.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DglbxybH.css">
+<link rel="manifest" href="/manifest.webmanifest"></head>
+<body>
+  <div class="flip-container" id="flip-container">
+    <div class="flipper">
+      
+      <!-- Lado da Câmera -->
+      <div class="front">
+        <div class="camera-container">
+          <video id="camera-preview" autoplay playsinline></video>
+          <!-- Canvas escondido usado para gerar a foto final -->
+          <canvas id="photo-canvas" width="1080" height="1080"></canvas>
+          
+          <!-- Elementos visuais por cima do vídeo -->
+          <div class="overlay">
+            <img id="overlay-logo" src="/logomarca/Logo.png" alt="Logo" crossorigin="anonymous">
+            
+            <!-- Metadata no canto inferior direito -->
+            <div class="metadata-preview">
+              <div id="preview-obra">Sem Obra</div>
+              <div id="preview-date">Data Hora</div>
+              <div id="preview-utm">UTM X Y</div>
+              <div id="preview-label"></div>
+              <div id="preview-empresa"></div>
+            </div>
+            
+            <button id="btn-settings" class="icon-btn">⚙️</button>
+            <button id="btn-capture" class="shutter-btn"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado das Configurações -->
+      <div class="back">
+        <div class="settings-container">
+          <div class="settings-header">
+            <h2>Configurações</h2>
+            <button id="btn-back" class="icon-btn">⬅️</button>
+          </div>
+          
+          <div class="settings-content">
+            
+            <!-- Cadastro de Obras -->
+            <div class="settings-section">
+              <h3>Obras</h3>
+              <div class="input-group">
+                <input type="text" id="obra-name" placeholder="Nome da Obra">
+                <input type="number" id="obra-radius" placeholder="Raio (m)" value="100">
+                <button id="btn-add-obra" class="btn-primary">Cadastrar Atual Local</button>
+              </div>
+              <ul id="obras-list" class="obras-list">
+                <!-- Obras inseridas via JS -->
+              </ul>
+            </div>
+
+            <!-- Logo -->
+            <div class="settings-section">
+              <h3>Logo e Marca d'Água</h3>
+              <div class="input-group">
+                <label>Tamanho da Logo (<span id="logo-size-val">50</span>%)</label>
+                <input type="range" id="logo-size" min="10" max="100" value="50">
+              </div>
+              <div class="input-group">
+                <label>Opacidade da Logo (<span id="logo-opacity-val">100</span>%)</label>
+                <input type="range" id="logo-opacity" min="0" max="100" value="100">
+              </div>
+              <div class="input-group">
+                <input type="text" id="custom-label" placeholder="Texto Opcional (Label)">
+              </div>
+            </div>
+
+            <!-- Atualização -->
+            <div class="settings-section">
+              <h3>Sistema</h3>
+              <button id="btn-update" class="btn-secondary">Buscar Atualização</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</body>
+</html>
